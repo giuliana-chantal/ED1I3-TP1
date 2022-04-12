@@ -8,15 +8,11 @@ using namespace std;
 #define JOGADORES 4
 
 int numeroAleatorio(int max) {
-    srandom(time(0));
+    random_device rd;
 
-    return random() % (max + 1 - min) + min;
+    uniform_int_distribution<int> distr(0, max);
 
-//    random_device rd;
-//
-//    uniform_int_distribution<int> distr(0, max);
-//
-//    return distr(rd);
+    return distr(rd);
 }
 
 string sortearCarta(string ***baralhos, string **maos) {
